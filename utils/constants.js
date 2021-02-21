@@ -1,0 +1,18 @@
+export const buttons = [
+  { name: "one", value: "1" },
+  { name: "two", value: "2" },
+  { name: "three", value: "3" },
+  { name: "plus", value: "+" },
+  { name: "four", value: "4" },
+  { name: "five", value: "5" },
+  { name: "six", value: "6" },
+  { name: "minus", value: "-" },
+  { name: "seven", value: "7" },
+  { name: "eight", value: "8" },
+  { name: "nine", value: "9" },
+  { name: "multiply", value: "*" },
+  { name: "cancel", value: "C" },
+  { name: "zero", value: "0" },
+  { name: "equal", value: "=" },
+  { name: "divide", value: "/" },
+];
