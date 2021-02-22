@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, Pressable } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
-const Button = ({ value, name, pressed }) => (
+const Button = ({ value, pressed }) => (
   <View style={styles.Button}>
     <LinearGradient
       style={styles.gradientView}
@@ -11,7 +11,7 @@ const Button = ({ value, name, pressed }) => (
       <View style={styles.pressable}>
         <Pressable
           style={styles.buttonView}
-          onPress={() => pressed(value)}
+          onPress={pressed}
           android_ripple={{
             color: "white",
             borderless: true,

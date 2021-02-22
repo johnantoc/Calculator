@@ -1,5 +1,5 @@
-const calculate = (value) => {
-  return value;
+const calculate = (curVal, preVal) => {
+  return `${preVal + curVal}`;
 };
 
 export default calculate;
