@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { StyleSheet, View } from "react-native";
 
 import Button from "../Button";
 import InputBox from "../InputBox";
+import InputList from "../../models/InputList";
 import { buttons } from "../../utils/constants";
-import calculate from "../../utils/calculate";
 
 const Calculator = () => {
+  const inputList = useRef(new InputList()).current;
   const [output, setOutput] = useState("");
-  const onPress = (curVal, preVal) => {
-    const output = calculate(curVal, preVal);
+
+  const onPress = (curVal) => {
+    inputList.save(curVal);
+    const output = inputList.getScreenValue();
     setOutput(output);
   };
 
@@ -20,11 +23,7 @@ const Calculator = () => {
       </View>
       <View style={styles.buttonContainer}>
         {buttons.map(({ name, value }) => (
-          <Button
-            key={name}
-            value={value}
-            pressed={() => onPress(value, output)}
-          />
+          <Button key={name} value={value} pressed={() => onPress(value)} />
         ))}
       </View>
     </View>
